@@ -1,0 +1,40 @@
+LAMP SERVER SETUP IN UBUNTU 16.04
+
+Ref:
+https://howtoubuntu.org/how-to-install-lamp-on-ubuntu
+
+ sudo apt-get update
+
+ sudo apt install apache2
+
+sudo apt install mysql-server
+
+sudo apt install php-pear php-fpm php-dev php-zip php-curl php-xmlrpc php-gd php-mysql php-mbstring php-xml libapache2-mod-php
+
+sudo service apache2 restart
+
+
+PHP mysql setup in ubuntu 16.04
+
+
+Ref: https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-phpmyadmin-on-ubuntu-16-04
+
+Cd /etc/apache2
+
+sudo nano ports.conf
+
+
+# If you just change the port or add more ports here, you will likely also
+# have to change the VirtualHost statement in
+# /etc/apache2/sites-enabled/000-default.conf
+
+Listen 8090
+
+<IfModule ssl_module>
+        Listen 443
+</IfModule>
+
+<IfModule mod_gnutls.c>
+        Listen 443
+</IfModule>
+
